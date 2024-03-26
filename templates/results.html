@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title> What's AKW Listening To? </title>
+        <link rel="stylesheet" type="text/css" href="../static/style.css">
+
+    </head>
+
+    <body> 
+        <h1> Results </h1>
+
+        <p><span class="placeholder"> You are a {{placeholder}} fan! </span></p>
+        <p><span class="placeholder"> {{ count }} of AKWers are {{placeholder}} fans like you! </span></p>
+        <p>Check out the playlist, "What's AKW Listening To?" </p>
+        <p> Game will restart within 30 sec </p>
+
+        <script type="text/javascript">
+            var placeholders = document.getElementsByClassName('placeholder');
+            for (var i = 0; i < placeholders.length; i++) {
+                var placeholderText = placeholders[i].textContent;
+                var newText = placeholderText.replace('{{ placeholder }}', '{{ placeholder }}');
+                placeholders[i].textContent = newText;
+                
+                document.getElementById('count').textContent = '{{ count }}';
+            }
+            
+            setTimeout(function() {
+                window.location.href = "/"
+            }, 5000);
+        </script>
+
+    
+    </body>
+</html>
